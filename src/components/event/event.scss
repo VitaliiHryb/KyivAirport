@@ -1,0 +1,35 @@
+.event {
+  position: absolute;
+  width: 90%;
+  //
+  min-height: 60px;
+  //
+  background-color: cornflowerblue;
+  z-index: 1;
+  border-radius: 8px;
+  padding: 8px;
+  color: #fff;
+
+  &__title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 8px;
+  }
+
+  &__time {
+    font-size: 12px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: red;
+  }
+}
+
+.delete-event-btn {
+  cursor: pointer;
+  border: none;
+}
