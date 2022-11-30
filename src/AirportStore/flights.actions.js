@@ -1,4 +1,4 @@
-import { fetchFlights } from './gateway/flights-gateway';
+import { fetchFlights } from '../gateway/flights-gateway';
 
 export const FLIGHTS_LIST_RECIEVED = 'TASKS_LIST_RECIEVED';
 

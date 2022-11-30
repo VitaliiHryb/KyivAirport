@@ -1,7 +1,7 @@
 import './SearchField.scss';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { dateSelector } from '../../flights.selectors';
+import { dateSelector } from '../../AirportStore/flights.selectors';
 import { useLocation, useHistory } from 'react-router-dom';
 import qs from 'qs';
 // import moment from 'moment';

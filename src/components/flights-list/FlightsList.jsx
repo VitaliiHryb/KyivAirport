@@ -5,10 +5,10 @@ import { useParams, useLocation } from 'react-router-dom';
 import {
   departureFlightsListSelector,
   arrivalFlightsListSelector,
-} from '../../flights.selectors';
-import * as flightsActions from '../../flights.actions';
+} from '../../AirportStore/flights.selectors';
+import * as flightsActions from '../../AirportStore/flights.actions';
 import qs from 'qs';
-import Flight from '../flight';
+import Flight from '../flight/Flight';
 
 const filterFlightsList = (flightsList, queryString) => {
   if (!queryString) return flightsList;

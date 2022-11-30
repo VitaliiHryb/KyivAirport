@@ -1,7 +1,7 @@
 import './FlightsSchedule.scss';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, Link, useLocation } from 'react-router-dom';
-import FlightsList from '../flights-list';
+import FlightsList from '../flights-list/FlightsList';
 
 function FlightsSchedule() {
   const [status, setStatus] = useState('departures');
