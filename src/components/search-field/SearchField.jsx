@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { dateSelector } from '../../flights.selectors';
 import { useLocation, useHistory } from 'react-router-dom';
 import qs from 'qs';
-import moment from 'moment';
+// import moment from 'moment';
 
 function SearchField({ date }) {
   const [inputValue, setInputValue] = useState('');
