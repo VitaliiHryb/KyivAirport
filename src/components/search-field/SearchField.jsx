@@ -29,7 +29,9 @@ function SearchField({ date }) {
       pathname = location.pathname + '?';
     }
     const queryString = qs.stringify(dataQuery);
+    // console.log(queryString);
     history.push(`${pathname}${queryString}`);
+    // console.log(history);
   };
 
   return (
@@ -44,7 +46,9 @@ function SearchField({ date }) {
           value={inputValue}
           onChange={event => setInputValue(event.target.value)}
         />
-        <button className="search-field__btn">Search</button>
+        <button className="search-field__btn" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );

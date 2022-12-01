@@ -8,7 +8,9 @@ import FlightsSchedule from '../flights-schedule/FlightsSchedule';
 
 function SearchFlightsPage({ fetchFlightsList }) {
   useEffect(() => {
-    fetchFlightsList(moment().format('DD-MM-YYYY'));
+    // today is not `2018-12-01`
+    fetchFlightsList(moment(`2018-12-01`).format('DD-MM-YYYY'));
+    // console.log(fetchFlightsList);
   }, []);
 
   return (
