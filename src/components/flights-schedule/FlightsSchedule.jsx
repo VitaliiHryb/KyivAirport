@@ -2,6 +2,8 @@ import './FlightsSchedule.scss';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, Link, useLocation } from 'react-router-dom';
 import FlightsList from '../flights-list/FlightsList';
+//
+import CalendarDate from './CalendarDate';
 
 function FlightsSchedule() {
   const [status, setStatus] = useState('departures');
@@ -36,6 +38,7 @@ function FlightsSchedule() {
           Arrivals
         </Link>
       </div>
+      <CalendarDate />
       <div className="flights-list__table-wrapper">
         <table className="flights-list__table flights-table">
           <thead className="flights-table__header">

@@ -1,0 +1,53 @@
+.calendar {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  color: #b8b9b9;
+  background-color: #fff;
+
+  &__days {
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__handler {
+      min-width: 110px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 3px solid;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #1eb7ee;
+        cursor: pointer;
+      }
+
+      &_weak {
+        font-size: 16px;
+        font-weight: 700;
+        padding-top: 10px;
+      }
+    }
+  }
+
+  &__current-day {
+    color: #1eb7ee;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
