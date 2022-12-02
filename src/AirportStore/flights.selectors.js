@@ -14,8 +14,10 @@ const filterFlightsList = (flightsList, filterString) => {
   const today = moment(`2018-12-01`).format('YYYY-MM-DD');
   return flightsList.filter(flight => {
     const dateOfDeparture = moment(flight[filterString]).format('YYYY-MM-DD');
+    // console.log(flight);
     return moment(today).isSame(dateOfDeparture);
   });
+  // output: filteredList; // ==> today === dateOfDeparture: 2018-11-30
 };
 
 export const departureFlightsListSelector = createSelector(

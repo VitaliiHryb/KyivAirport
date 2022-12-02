@@ -7,7 +7,7 @@ function CalendarDate() {
       <div className="calendar__days calendar__current-day">
         <span>01/12</span>
         <img
-          class="calendar__days__logo"
+          className="calendar__days__logo"
           src="https://cdn.icon-icons.com/icons2/2724/PNG/512/calendar_day_month_date_year_schedule_icon_175594.png"
           alt="Calendar Logo Not Found"
         />
