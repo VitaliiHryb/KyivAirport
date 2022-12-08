@@ -12,7 +12,9 @@ import Flight from '../flight/Flight';
 
 const filterFlightsList = (flightsList, queryString) => {
   if (!queryString) return flightsList;
+  // console.log(`flightsList is ${JSON.stringify(queryString)}`); // ==> flightsList is "PQ7103"
   return flightsList.filter(flight => {
+    // console.log(`flight.fltNo is ${flight.fltNo}`); // ==> flight.fltNo is 1723 ... flight.fltNo is 6259 ... flight.fltNo is 1692
     const fltNo = `${flight['carrierID.IATA']}${flight.fltNo}`;
     return fltNo.toLowerCase().includes(queryString.toLowerCase());
   });
@@ -20,6 +22,10 @@ const filterFlightsList = (flightsList, queryString) => {
 
 const createFlightsList = (flightsList, flightDirection) => {
   return flightsList.map(flight => {
+    // console.log(`flight is ${JSON.stringify(flight)}`);
+    // ==> very long object ==> {"ID":2000026422470, ... "timeDepShedule":"2018-12-01T02:05:00Z", ...
+    // "term":"A", "fltNo":"7103"б, "airportToID.name_en":"Sharm el-Sheikh", "timeTakeofFact":"2018-12-01T03:02:18Z", "status":"DP",
+    // "airline":{"en":{"id":23,"name":"SkyUP", ... "logoSmallName":"https://api.iev.aero/media/airline/files/5b556ba4e2250445105051.png", ... }
     let data = {
       term: flight.term,
       fltNo: `${flight['carrierID.IATA']}${flight.fltNo}`,
@@ -50,10 +56,17 @@ const FlightsList = ({ departureFlightsList, arrivalFlightsList }) => {
 
   useEffect(() => {
     const query = qs.parse(location.search, { ignoreQueryPrefix: true });
+    // console.log(`query is ${JSON.stringify(query)}`); // ==> {"search":"PQ7103","date":"01-12-2018"}
     if (direction && direction.includes('arrivals')) {
+      // console.log(
+      //   `arrivalFlightsList is ${JSON.stringify(arrivalFlightsList)}`,
+      // ); // very long object
       setFlightsList(filterFlightsList(arrivalFlightsList, query.search));
       setStatus('arrivals');
     } else {
+      // console.log(
+      //   `departureFlightsList is ${JSON.stringify(departureFlightsList)}`,
+      // ); // very long object
       setFlightsList(filterFlightsList(departureFlightsList, query.search));
       setStatus('departures');
     }

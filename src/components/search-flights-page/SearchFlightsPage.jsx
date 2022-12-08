@@ -6,19 +6,6 @@ import moment from 'moment';
 import SearchField from '../search-field/SearchField';
 import FlightsSchedule from '../flights-schedule/FlightsSchedule';
 
-/*
-function SearchFlightsPage() {
-  return (
-    <>
-      <SearchField />
-      <FlightsSchedule />
-    </>
-  );
-}
-
-export default SearchFlightsPage;
-*/
-
 function SearchFlightsPage({ fetchFlightsList }) {
   useEffect(() => {
     // today is not `2018-12-01`
