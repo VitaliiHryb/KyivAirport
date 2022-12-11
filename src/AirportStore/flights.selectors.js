@@ -9,14 +9,6 @@ export const dateSelector = state => {
   return state.flights.date;
 };
 
-//
-export const calendarDateSelector = createSelector([dateSelector], date => {
-  const flightDate = moment(date).format('DD-MM-YYYY');
-  if (date === null) return moment().format('DD-MM');
-  return moment(flightDate).format('DD-MM');
-});
-//
-
 const filterFlightsList = (flightsList, filterString) => {
   // today is not 2018, but for testing
   const today = moment(`2018-12-01`).format('YYYY-MM-DD');
