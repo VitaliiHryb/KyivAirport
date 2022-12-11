@@ -62,22 +62,22 @@ function DatePicker({ fetchFlightsList, date }) {
   return (
     <div className="calendar">
       <div className="calendar__days calendar__current-day">
-        <span>{moment(date).format('YYYY-MM-DD')}</span>
+        <span>{moment(date).format('DD-MM')}</span>
         <div className="calendar__days__logo">
           <i className="fa-regular fa-calendar">Calendar Logo</i>
         </div>
       </div>
       <div className="calendar__days">
         <div className={activeBtn.yesterdayActive} onClick={onYesterday}>
-          <span>{yesterday}</span>
+          <span>{moment(yesterday).format('DD-MM')}</span>
           <div className="calendar__days__handler_weak">yesterday</div>
         </div>
         <div className={activeBtn.todayActive} onClick={onToday}>
-          <span>{today}</span>
+          <span>{moment(today).format('DD-MM')}</span>
           <div className="calendar__days__handler_weak">today</div>
         </div>
         <div className={activeBtn.tomorrowActive} onClick={onTomorrow}>
-          <span>{tomorrow}</span>
+          <span>{moment(tomorrow).format('DD-MM')}</span>
           <div className="calendar__days__handler_weak">tomorrow</div>
         </div>
       </div>
