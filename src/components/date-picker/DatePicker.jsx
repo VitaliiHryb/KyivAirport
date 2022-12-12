@@ -10,9 +10,10 @@ import DatePickerCalendar from './calendar/DatePickerCalendar';
 function DatePicker({ fetchFlightsList, date }) {
   const [activeBtn, setActiveBtn] = useState({
     yesterdayActive:
-      'calendar__days__handler calendar__days__handler_yesterday',
-    todayActive: 'calendar__days__handler calendar__days__handler_today',
-    tomorrowActive: 'calendar__days__handler calendar__days__handler_tomorrow',
+      'date-picker__days__handler calendar__days__handler_yesterday',
+    todayActive: 'date-picker__days__handler calendar__days__handler_today',
+    tomorrowActive:
+      'date-picker__days__handler calendar__days__handler_tomorrow',
   });
 
   const fakeCurrentDay = moment('2018-12-01');
@@ -23,37 +24,37 @@ function DatePicker({ fetchFlightsList, date }) {
   const onYesterday = () => {
     setActiveBtn({
       yesterdayActive:
-        'calendar__days__handler calendar__days__handler_yesterday btn-active',
-      todayActive: 'calendar__days__handler calendar__days__handler_today',
+        'date-picker__days__handler calendar__days__handler_yesterday btn-active',
+      todayActive: 'date-picker__days__handler calendar__days__handler_today',
       tomorrowActive:
-        'calendar__days__handler calendar__days__handler_tomorrow',
+        'date-picker__days__handler calendar__days__handler_tomorrow',
     });
 
-    fetchFlightsList(moment(yesterday).format('DD-MM-YYYY'));
+    fetchFlightsList(moment(yesterday));
   };
 
   const onToday = () => {
     setActiveBtn({
       todayActive:
-        'calendar__days__handler calendar__days__handler_today btn-active',
+        'date-picker__days__handler calendar__days__handler_today btn-active',
       yesterdayActive:
-        'calendar__days__handler calendar__days__handler_yesterday',
+        'date-picker__days__handler calendar__days__handler_yesterday',
       tomorrowActive:
-        'calendar__days__handler calendar__days__handler_tomorrow',
+        'date-picker__days__handler calendar__days__handler_tomorrow',
     });
 
-    fetchFlightsList(moment(today).format('DD-MM-YYYY'));
+    fetchFlightsList(moment(today));
   };
 
   const onTomorrow = () => {
     setActiveBtn({
       tomorrowActive:
-        'calendar__days__handler calendar__days__handler_tomorrow btn-active',
+        'date-picker__days__handler calendar__days__handler_tomorrow btn-active',
       yesterdayActive:
-        'calendar__days__handler calendar__days__handler_yesterday',
-      todayActive: 'calendar__days__handler calendar__days__handler_today',
+        'date-picker__days__handler calendar__days__handler_yesterday',
+      todayActive: 'date-picker__days__handler calendar__days__handler_today',
     });
-    fetchFlightsList(moment(tomorrow).format('DD-MM-YYYY'));
+    fetchFlightsList(moment(tomorrow));
   };
 
   const [calendarIsVisible, setCalendarIsVisible] = useState(false);
@@ -65,26 +66,24 @@ function DatePicker({ fetchFlightsList, date }) {
   };
 
   return (
-    <div className="calendar">
-      <div className="calendar__days calendar__current-day">
+    <div className="date-picker">
+      <div className="date-picker__days__current-day">
         <span>{moment(date).format('DD-MM')}</span>
-        <div className="calendar__days__logo">
-          <Calendar onClick={showCalendar} />
-          {calendarIsVisible === true ? <DatePickerCalendar /> : <></>}
-        </div>
+        <Calendar className="date-picker__days__logo" onClick={showCalendar} />
+        {calendarIsVisible === true ? <DatePickerCalendar /> : <></>}
       </div>
-      <div className="calendar__days">
+      <div className="date-picker__days">
         <div className={activeBtn.yesterdayActive} onClick={onYesterday}>
           <span>{moment(yesterday).format('DD-MM')}</span>
-          <div className="calendar__days__handler_weak">yesterday</div>
+          <div className="date-picker__days__handler_weak">yesterday</div>
         </div>
         <div className={activeBtn.todayActive} onClick={onToday}>
           <span>{moment(today).format('DD-MM')}</span>
-          <div className="calendar__days__handler_weak">today</div>
+          <div className="date-picker__days__handler_weak">today</div>
         </div>
         <div className={activeBtn.tomorrowActive} onClick={onTomorrow}>
           <span>{moment(tomorrow).format('DD-MM')}</span>
-          <div className="calendar__days__handler_weak">tomorrow</div>
+          <div className="date-picker__days__handler_weak">tomorrow</div>
         </div>
       </div>
     </div>

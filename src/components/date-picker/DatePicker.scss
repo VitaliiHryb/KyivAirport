@@ -1,20 +1,20 @@
-.calendar {
+.date-picker {
   display: flex;
   flex-direction: row;
   font-size: 13px;
   color: #b8b9b9;
-  background-color: #fff;
+  background-color: #ffffff;
 
   &__days {
-    min-width: 100px;
+    // min-width: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
     &__logo {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
     }
 
     &__handler {
@@ -38,16 +38,18 @@
         padding-top: 10px;
       }
     }
-  }
 
-  &__current-day {
-    color: #1eb7ee;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-around;
+    &__current-day {
+      display: flex;
+      flex-direction: column;
+      color: #1eb7ee;
+      cursor: pointer;
+      justify-content: space-around;
+      margin: 0 15px;
 
-    &:hover {
-      font-weight: 700;
+      &:hover {
+        font-weight: 700;
+      }
     }
   }
 }
