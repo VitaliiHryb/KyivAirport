@@ -1,13 +1,14 @@
 import './DatePickerCalendar.scss';
 import React, { useState } from 'react';
 import moment from 'moment';
-import { Week, DayNames } from './DatePickerComponents';
+import Week from './DatePickerComponents/Week';
+import DayNames from './DatePickerComponents/DayNames';
 // import { connect } from 'react-redux';
 // import * as flightsActions from '../../AirportStore/flights.actions';
 // import { dateSelector } from '../../AirportStore/flights.selectors';
 
 const DatePickerCalendar = () => {
-  [state, setState] = useState({
+  const [state, setState] = useState({
     month: moment(),
     selected: moment().startOf('day'),
   });
@@ -53,7 +54,7 @@ const DatePickerCalendar = () => {
     while (!done) {
       weeks.push(
         <Week
-          key={date}
+          key={Math.random()}
           date={date.clone()}
           month={month}
           select={day => select(day)}
@@ -81,7 +82,7 @@ const DatePickerCalendar = () => {
       <header className="header">
         <div className="month-display row">
           <i className="arrow fa fa-angle-left" onClick={previous} />
-          {this.renderMonthLabel()}
+          {renderMonthLabel()}
           <i className="arrow fa fa-angle-right" onClick={next} />
         </div>
         <DayNames />

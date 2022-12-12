@@ -1,3 +1,5 @@
+import React from 'react';
+
 const DayNames = () => {
   return (
     <div className="row day-names">

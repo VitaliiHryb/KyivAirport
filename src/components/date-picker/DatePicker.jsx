@@ -5,6 +5,7 @@ import * as flightsActions from '../../AirportStore/flights.actions';
 import { dateSelector } from '../../AirportStore/flights.selectors';
 import moment from 'moment';
 import { Calendar } from 'react-bootstrap-icons';
+import DatePickerCalendar from './calendar/DatePickerCalendar';
 
 function DatePicker({ fetchFlightsList, date }) {
   const [activeBtn, setActiveBtn] = useState({
@@ -61,7 +62,8 @@ function DatePicker({ fetchFlightsList, date }) {
         {/* костыль */}
         <span>{moment(date).format('DD-MM')}</span>
         <div className="calendar__days__logo">
-          <Calendar />
+          {/* <Calendar /> */}
+          <DatePickerCalendar />
         </div>
       </div>
       <div className="calendar__days">

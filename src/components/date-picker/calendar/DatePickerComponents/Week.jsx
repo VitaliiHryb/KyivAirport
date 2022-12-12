@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Day from './Day';
 
 const Week = props => {
@@ -6,7 +7,7 @@ const Week = props => {
 
   const { month, selected, select } = props;
 
-  for (var i = 0; i < 7; i++) {
+  for (let i = 0; i < 7; i++) {
     let day = {
       name: date.format('dd').substring(0, 1),
       number: date.date(),
@@ -21,7 +22,7 @@ const Week = props => {
   }
 
   return (
-    <div className="row week" key={days[0]}>
+    <div className="row week" key={Math.random()}>
       {days}
     </div>
   );

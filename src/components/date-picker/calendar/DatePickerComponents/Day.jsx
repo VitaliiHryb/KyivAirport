@@ -11,7 +11,7 @@ const Day = props => {
 
   return (
     <span
-      key={date.toString()}
+      key={Math.random()}
       className={
         'day' +
         (isToday ? ' today' : '') +
