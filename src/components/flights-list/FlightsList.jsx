@@ -21,6 +21,7 @@ const filterFlightsList = (flightsList, queryString) => {
 };
 
 const createFlightsList = (flightsList, flightDirection) => {
+  //console.log(flightsList, flightDirection);
   return flightsList.map(flight => {
     // console.log(`flight is ${JSON.stringify(flight)}`);
     // ==> very long object ==> {"ID":2000026422470, ... "timeDepShedule":"2018-12-01T02:05:00Z", ...

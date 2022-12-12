@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as flightsActions from '../../AirportStore/flights.actions';
 import { dateSelector } from '../../AirportStore/flights.selectors';
 import moment from 'moment';
-import 'font-awesome/css/font-awesome.min.css';
+import { Calendar } from 'react-bootstrap-icons';
 
 function DatePicker({ fetchFlightsList, date }) {
   const [activeBtn, setActiveBtn] = useState({
@@ -15,11 +15,9 @@ function DatePicker({ fetchFlightsList, date }) {
   });
 
   const fakeCurrentDay = moment('2018-12-01');
-  const today = moment(fakeCurrentDay).format('YYYY-MM-DD');
-  const yesterday = moment(fakeCurrentDay)
-    .subtract(1, 'days')
-    .format('YYYY-MM-DD');
-  const tomorrow = moment(fakeCurrentDay).add(1, 'days').format('YYYY-MM-DD');
+  const today = moment(fakeCurrentDay);
+  const yesterday = moment(fakeCurrentDay).subtract(1, 'days');
+  const tomorrow = moment(fakeCurrentDay).add(1, 'days');
 
   const onYesterday = () => {
     setActiveBtn({
@@ -30,9 +28,7 @@ function DatePicker({ fetchFlightsList, date }) {
         'calendar__days__handler calendar__days__handler_tomorrow',
     });
 
-    fetchFlightsList(
-      moment(yesterday).subtract(1, 'days').format('YYYY-MM-DD'),
-    );
+    fetchFlightsList(moment(yesterday).format('DD-MM-YYYY'));
   };
 
   const onToday = () => {
@@ -45,7 +41,7 @@ function DatePicker({ fetchFlightsList, date }) {
         'calendar__days__handler calendar__days__handler_tomorrow',
     });
 
-    fetchFlightsList(moment(today).format('YYYY-MM-DD'));
+    fetchFlightsList(moment(today).format('DD-MM-YYYY'));
   };
 
   const onTomorrow = () => {
@@ -56,15 +52,16 @@ function DatePicker({ fetchFlightsList, date }) {
         'calendar__days__handler calendar__days__handler_yesterday',
       todayActive: 'calendar__days__handler calendar__days__handler_today',
     });
-    fetchFlightsList(moment(tomorrow).add(1, 'days').format('YYYY-MM-DD'));
+    fetchFlightsList(moment(tomorrow).format('DD-MM-YYYY'));
   };
 
   return (
     <div className="calendar">
       <div className="calendar__days calendar__current-day">
+        {/* костыль */}
         <span>{moment(date).format('DD-MM')}</span>
         <div className="calendar__days__logo">
-          <i className="fa-regular fa-calendar">Calendar Logo</i>
+          <Calendar />
         </div>
       </div>
       <div className="calendar__days">
