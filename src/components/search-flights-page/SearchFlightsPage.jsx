@@ -14,10 +14,10 @@ function SearchFlightsPage({ fetchFlightsList }) {
   }, []);
 
   return (
-    <>
+    <React.StrictMode>
       <SearchField />
       <FlightsSchedule />
-    </>
+    </React.StrictMode>
   );
 }
 

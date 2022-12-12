@@ -6,7 +6,7 @@ import {
   departureFlightsListSelector,
   arrivalFlightsListSelector,
 } from '../../AirportStore/flights.selectors';
-import * as flightsActions from '../../AirportStore/flights.actions';
+// import * as flightsActions from '../../AirportStore/flights.actions';
 import qs from 'qs';
 import Flight from '../flight/Flight';
 
@@ -82,8 +82,8 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = {
-  getFlightsList: flightsActions.fetchFlightsList,
-};
+// const mapDispatchToProps = {
+//   getFlightsList: flightsActions.fetchFlightsList,
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FlightsList);
+export default connect(mapStateToProps)(FlightsList);
