@@ -56,14 +56,21 @@ function DatePicker({ fetchFlightsList, date }) {
     fetchFlightsList(moment(tomorrow).format('DD-MM-YYYY'));
   };
 
+  const [calendarIsVisible, setCalendarIsVisible] = useState(false);
+
+  const showCalendar = () => {
+    calendarIsVisible === false
+      ? setCalendarIsVisible(true)
+      : setCalendarIsVisible(false);
+  };
+
   return (
     <div className="calendar">
       <div className="calendar__days calendar__current-day">
-        {/* костыль */}
         <span>{moment(date).format('DD-MM')}</span>
         <div className="calendar__days__logo">
-          {/* <Calendar /> */}
-          <DatePickerCalendar />
+          <Calendar onClick={showCalendar} />
+          {calendarIsVisible === true ? <DatePickerCalendar /> : <></>}
         </div>
       </div>
       <div className="calendar__days">

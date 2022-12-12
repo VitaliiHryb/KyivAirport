@@ -15,7 +15,9 @@ const Week = props => {
       isToday: date.isSame(new Date(), 'day'),
       date: date,
     };
-    days.push(<Day day={day} selected={selected} select={select} />);
+    days.push(
+      <Day day={day} selected={selected} select={select} key={Math.random()} />,
+    );
 
     date = date.clone();
     date.add(1, 'day');
