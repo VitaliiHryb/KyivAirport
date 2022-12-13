@@ -5,9 +5,10 @@ import Week from './DatePickerComponents/Week';
 import DayNames from './DatePickerComponents/DayNames';
 
 const DatePickerCalendar = () => {
+  const fakeCurrentDay = moment('2018-12-01');
   const [state, setState] = useState({
-    month: moment(),
-    selected: moment().startOf('day'),
+    month: moment(fakeCurrentDay),
+    selected: moment(fakeCurrentDay).startOf('day'),
   });
 
   function previous() {
