@@ -3,14 +3,9 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { dateSelector } from '../../AirportStore/flights.selectors';
 import { useLocation, useHistory } from 'react-router-dom';
-// import qs from 'qs';
 import * as qs from 'qs';
-// import moment from 'moment';
 
 function SearchField({ date }) {
-  // console.log(state); //==> flights: {flightsList: {…}, date: '01-12-2018'}
-  // console.log(state.flightsList); //==> body: {departure: Array(88), arrival: Array(86)}, error: {code: 200}
-  // console.log(date); // null ==> some time ==> 01-12-2018
   const [inputValue, setInputValue] = useState('');
   const location = useLocation();
   const history = useHistory();
@@ -33,9 +28,7 @@ function SearchField({ date }) {
       pathname = location.pathname + '?';
     }
     const queryString = qs.stringify(dataQuery);
-    // console.log(queryString);
     history.push(`${pathname}${queryString}`);
-    // console.log(history);
   };
 
   return (

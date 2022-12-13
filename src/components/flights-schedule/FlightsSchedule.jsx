@@ -2,10 +2,7 @@ import './FlightsSchedule.scss';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, Link, useLocation } from 'react-router-dom';
 import FlightsList from '../flights-list/FlightsList';
-//
-// import { connect } from 'react-redux';
 import DatePicker from '../date-picker/DatePicker';
-// import { dateSelector } from '../../AirportStore/flights.selectors';
 
 function FlightsSchedule() {
   const [status, setStatus] = useState('departures');
@@ -64,11 +61,5 @@ function FlightsSchedule() {
     </div>
   );
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     date: dateSelector(state),
-//   };
-// };
 
 export default FlightsSchedule;

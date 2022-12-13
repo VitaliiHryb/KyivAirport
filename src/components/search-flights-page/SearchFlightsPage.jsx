@@ -8,10 +8,8 @@ import FlightsSchedule from '../flights-schedule/FlightsSchedule';
 
 function SearchFlightsPage({ fetchFlightsList }) {
   useEffect(() => {
-    // today is not `2018-12-01`
     const fakeCurrentDay = moment('2018-12-01');
     fetchFlightsList(moment(fakeCurrentDay));
-    // console.log(fetchFlightsList);
   }, []);
 
   return (
