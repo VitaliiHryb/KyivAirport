@@ -6,7 +6,10 @@
   color: black;
 }
 .calendar {
-  position: relative;
+  // position: relative;
+  position: absolute;
+  z-index: 100;
+  top: 50px;
   display: block;
   background: #ffffff;
   width: 300px;
@@ -45,6 +48,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background: #73d2f0;
+
       &:hover {
         background: #1f5c9d;
       }
