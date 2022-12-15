@@ -1,6 +1,6 @@
 # Calendar
 
-### [Netify Site link](https://vitalii-hryb-react-calendar.netlify.app/)
+### [Netify Site link](https://kyiv-airport-redux.netlify.app)
 
 #### Layout supports desktop version
 
