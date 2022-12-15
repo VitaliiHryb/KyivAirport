@@ -14,7 +14,8 @@
 - [React JavaScript library](https://reactjs.org/)
 - [moment library](https://momentjs.com/)
 - [prop-types library](https://www.npmjs.com/package/prop-types)
-- [React useState, useEffect Hooks](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
+- [React useState, useEffect, useParams, useLocation, useHistory Hooks](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
+- [React Redux](https://react-redux.js.org/)
 
 ## Author
 
