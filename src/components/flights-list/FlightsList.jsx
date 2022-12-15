@@ -1,4 +1,3 @@
-import './FlightsList.scss';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams, useLocation } from 'react-router-dom';
@@ -19,7 +18,6 @@ const filterFlightsList = (flightsList, queryString) => {
 };
 
 const createFlightsList = (flightsList, flightDirection) => {
-  // console.log(flightsList.length); ==> 0
   return flightsList.map(flight => {
     let data = {
       term: flight.term,
@@ -71,8 +69,6 @@ const FlightsList = ({ departureFlightsList, arrivalFlightsList }) => {
       )}
     </>
   );
-
-  // return <>{createFlightsList(flightsList, status)}</>;
 };
 
 const mapStateToProps = state => {

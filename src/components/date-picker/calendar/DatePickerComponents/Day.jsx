@@ -14,7 +14,6 @@ const Day = props => {
 
   const onHandleDate = () => {
     select(day);
-
     fetchFlightsList(moment(day.date));
   };
 

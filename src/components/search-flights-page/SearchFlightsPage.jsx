@@ -1,4 +1,3 @@
-import './SearchFlightsPage.scss';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as flightsActions from '../../AirportStore/flights.actions';
