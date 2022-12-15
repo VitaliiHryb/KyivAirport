@@ -2,8 +2,6 @@
 
 ### [Netify Site link](https://vitalii-hryb-react-calendar.netlify.app/)
 
-### [GitHub Pages Site link](https://vitaliihryb.github.io/CalendarWithReact/)
-
 #### Layout supports desktop version
 
 ### The tech stack is:
@@ -21,4 +19,5 @@
 ## Author
 
 - ### Vitalii Hryb
+
 # KyivAirport
