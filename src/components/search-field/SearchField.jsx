@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { dateSelector } from '../../AirportStore/flights.selectors';
 import { useLocation, useHistory } from 'react-router-dom';
 import * as qs from 'qs';
+import moment from 'moment';
 
 function SearchField({ date }) {
   const [inputValue, setInputValue] = useState('');
@@ -14,7 +15,7 @@ function SearchField({ date }) {
     event.preventDefault();
     let dataQuery = {
       search: inputValue,
-      date,
+      date: moment(date).format('YYYY-MM-DD'),
     };
     let pathname = '';
     if (location.pathname === '/') {
