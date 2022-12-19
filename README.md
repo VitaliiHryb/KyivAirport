@@ -20,5 +20,3 @@
 ## Author
 
 - ### Vitalii Hryb
-
-# KyivAirport
