@@ -6,7 +6,6 @@ import DayNames from './DatePickerComponents/DayNames';
 import PropTypes from 'prop-types';
 
 const DatePickerCalendar = ({ date }) => {
-  // console.log(typeof date); ==> object
   const [state, setState] = useState({
     month: moment(date),
     selected: moment(date).startOf('day'),

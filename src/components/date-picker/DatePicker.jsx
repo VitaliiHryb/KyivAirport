@@ -6,6 +6,7 @@ import { dateSelector } from '../../AirportStore/flights.selectors';
 import moment from 'moment';
 import { Calendar } from 'react-bootstrap-icons';
 import DatePickerCalendar from './calendar/DatePickerCalendar';
+import PropTypes from 'prop-types';
 
 function DatePicker({ fetchFlightsList, date }) {
   const [activeBtn, setActiveBtn] = useState({
@@ -105,3 +106,8 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DatePicker);
+
+DatePicker.propTypes = {
+  fetchFlightsList: PropTypes.func.isRequired,
+  date: PropTypes.object,
+};
