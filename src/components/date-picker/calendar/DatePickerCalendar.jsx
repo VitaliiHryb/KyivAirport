@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import Week from './DatePickerComponents/Week';
 import DayNames from './DatePickerComponents/DayNames';
+import PropTypes from 'prop-types';
 
-const DatePickerCalendar = () => {
-  const fakeCurrentDay = moment('2018-12-01');
+const DatePickerCalendar = ({ date }) => {
+  // console.log(typeof date); ==> object
   const [state, setState] = useState({
-    month: moment(fakeCurrentDay),
-    selected: moment(fakeCurrentDay).startOf('day'),
+    month: moment(date),
+    selected: moment(date).startOf('day'),
   });
 
   function previous() {
@@ -89,3 +90,7 @@ const DatePickerCalendar = () => {
 };
 
 export default DatePickerCalendar;
+
+DatePickerCalendar.propTypes = {
+  date: PropTypes.object.isRequired,
+};

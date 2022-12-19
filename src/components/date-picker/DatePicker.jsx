@@ -70,7 +70,11 @@ function DatePicker({ fetchFlightsList, date }) {
       <div className="date-picker__days__current-day">
         <span>{moment(date).format('DD-MM')}</span>
         <Calendar className="date-picker__days__logo" onClick={showCalendar} />
-        {calendarIsVisible === true ? <DatePickerCalendar /> : <></>}
+        {calendarIsVisible === true ? (
+          <DatePickerCalendar date={date} />
+        ) : (
+          <></>
+        )}
       </div>
       <div className="date-picker__days">
         <div className={activeBtn.yesterdayActive} onClick={onYesterday}>
