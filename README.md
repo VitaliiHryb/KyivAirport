@@ -1,4 +1,4 @@
-# Calendar
+# KyivAirport
 
 ### [Netify Site link](https://kyiv-airport-redux.netlify.app)
 
