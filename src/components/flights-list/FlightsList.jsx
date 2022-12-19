@@ -8,6 +8,7 @@ import {
 import qs from 'qs';
 import Flight from '../flight/Flight';
 import NoFlight from '../no-flights/NoFlight';
+import PropTypes from 'prop-types';
 
 const filterFlightsList = (flightsList, queryString) => {
   if (!queryString) return flightsList;
@@ -79,3 +80,8 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(FlightsList);
+
+FlightsList.propTypes = {
+  flightsList: PropTypes.arrayOf(PropTypes.object),
+  flightDirection: PropTypes.string,
+};

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as flightsActions from '../../../../AirportStore/flights.actions';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 const Day = props => {
   const {
@@ -38,3 +39,12 @@ const mapDispatchToProps = {
 };
 
 export default connect(null, mapDispatchToProps)(Day);
+
+Day.propTypes = {
+  props: PropTypes.shape({
+    day: PropTypes.object,
+    fetchFlightsList: PropTypes.func,
+    select: PropTypes.func,
+    selected: PropTypes.object,
+  }),
+};

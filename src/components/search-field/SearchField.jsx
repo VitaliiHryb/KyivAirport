@@ -5,6 +5,7 @@ import { dateSelector } from '../../AirportStore/flights.selectors';
 import { useLocation, useHistory } from 'react-router-dom';
 import * as qs from 'qs';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 function SearchField({ date }) {
   const [inputValue, setInputValue] = useState('');
@@ -59,3 +60,7 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(SearchField);
+
+SearchField.propTypes = {
+  date: PropTypes.object,
+};

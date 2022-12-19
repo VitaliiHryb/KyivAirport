@@ -1,6 +1,7 @@
 import './Flight.scss';
 import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 function Flight(props) {
   const localTime = moment(props.localTime).format('HH:mm');
@@ -41,3 +42,16 @@ function Flight(props) {
 }
 
 export default Flight;
+
+Flight.propTypes = {
+  props: PropTypes.shape({
+    airportName: PropTypes.string,
+    fltNo: PropTypes.string,
+    localTime: PropTypes.string,
+    logoUrl: PropTypes.string,
+    name: PropTypes.string,
+    status: PropTypes.string,
+    term: PropTypes.string,
+    timeStatus: PropTypes.string,
+  }),
+};

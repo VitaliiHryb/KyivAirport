@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Day from './Day';
+import PropTypes from 'prop-types';
 
 const Week = props => {
   let { date } = props;
@@ -31,3 +32,12 @@ const Week = props => {
 };
 
 export default Week;
+
+Day.propTypes = {
+  props: PropTypes.shape({
+    date: PropTypes.object,
+    month: PropTypes.object,
+    select: PropTypes.func,
+    selected: PropTypes.object,
+  }),
+};
